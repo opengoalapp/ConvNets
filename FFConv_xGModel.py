@@ -34,8 +34,9 @@ from sklearn.linear_model import LogisticRegression
 # OR....
 
 # pre-load a snapshot of the data (June 2020) that has already been processed
-DataIn = np.load('input_arrays.npy') # loaded as float16 to save space - model will cast to float32 automatically
-DataOut = pd.read_pickle("./output_arrays.pkl")
+loaded = np.load('data/input_compressed.npz')
+DataIn = loaded['a'] 
+DataOut = pd.read_pickle("data/output_arrays.pkl")
 
 #---------------------------------------------
 
